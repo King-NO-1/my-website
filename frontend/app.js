@@ -4,7 +4,9 @@ const state = {
   givenType: 'double'
 };
 
-const apiBase = 'http://127.0.0.1:5000';
+const apiBase = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost'
+  ? 'http://127.0.0.1:5000'
+  : 'https://api.dldl66.cc.cd';
 const resultEl = document.getElementById('nameResult');
 const generateBtn = document.getElementById('generateBtn');
 

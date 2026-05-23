@@ -4,36 +4,42 @@ Minimal fullstack Chinese name generator.
 
 ## Structure
 
-- rontend/: static web UI
-- ackend/: Flask API
+- `frontend/`: static web UI
+- `backend/`: local Flask API for development
+- `api/index.py`: Vercel Python serverless API entry
 
 ## Local Development
 
 1. Start backend:
 
-`ash
+```bash
 cd backend
 python -m venv .venv
 .venv\\Scripts\\activate
 pip install -r requirements.txt
 python app.py
-`
+```
 
 2. Start frontend in a second terminal:
 
-`ash
+```bash
 cd frontend
 python -m http.server 5173
-`
+```
 
-3. Open http://127.0.0.1:5173.
+3. Open `http://127.0.0.1:5173`.
 
-## Deploy Plan
+## Deploy Plan (Vercel)
 
-- Frontend: deploy rontend/ to Vercel (or Cloudflare Pages)
-- Backend: deploy ackend/ to Render or Railway and get public API URL
-- Update rontend/app.js piBase to backend URL
+- Frontend project: set Root Directory to `frontend/`
+- Backend project: set Root Directory to repository root and use `vercel.json`
+- Backend endpoint will be `/api/*` served by `api/index.py`
 
 ## Domain
 
-After frontend deploy, set custom domain dldl66.cc.cd on your frontend platform and add DNS records in your domain provider.
+- Frontend domain: `dldl66.cc.cd`
+- Backend domain: `api.dldl66.cc.cd`
+
+`frontend/app.js` is already configured:
+- local development uses `http://127.0.0.1:5000`
+- production uses `https://api.dldl66.cc.cd`
