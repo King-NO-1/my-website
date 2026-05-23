@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Name Generator</title>
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link href='https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap' rel='stylesheet' />
+    <link rel='stylesheet' href='styles.css' />
+  </head>
+  <body>
+    <main class='shell'>
+      <section class='panel'>
+        <h1>Name Generator</h1>
+        <div class='controls'>
+          <div class='choice-group' aria-label='gender'>
+            <button class='choice active' data-key='gender' data-value='random'>Random</button>
+            <button class='choice' data-key='gender' data-value='male'>Male</button>
+            <button class='choice' data-key='gender' data-value='female'>Female</button>
+          </div>
+          <div class='choice-group' aria-label='surname type'>
+            <button class='choice active' data-key='surnameType' data-value='single'>Single Surname</button>
+            <button class='choice' data-key='surnameType' data-value='compound'>Compound Surname</button>
+          </div>
+          <div class='choice-group' aria-label='given name type'>
+            <button class='choice' data-key='givenType' data-value='single'>Single Given</button>
+            <button class='choice active' data-key='givenType' data-value='double'>Double Given</button>
+          </div>
+        </div>
+        <button id='generateBtn' class='generate'>Generate</button>
+        <p id='nameResult' class='result'>Click Generate</p>
+      </section>
+    </main>
+    <script src='app.js'></script>
+  </body>
+</html>
